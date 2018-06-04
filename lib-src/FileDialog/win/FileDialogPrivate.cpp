@@ -883,7 +883,7 @@ int FileDialog::ShowModal()
    *titleBuffer    = wxT('\0');
    
    // We always need EXPLORER and ENABLEHOOK to use our filtering code
-   DWORD msw_flags = OFN_HIDEREADONLY | OFN_EXPLORER | OFN_ENABLEHOOK | OFN_ENABLESIZING | OFN_ENABLETEMPLATEHANDLE;
+   DWORD msw_flags = OFN_HIDEREADONLY;
 
    if (HasFdFlag(wxFD_FILE_MUST_EXIST))
       msw_flags |= OFN_PATHMUSTEXIST | OFN_FILEMUSTEXIST;
