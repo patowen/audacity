@@ -896,10 +896,10 @@ int FileDialog::ShowModal()
       in the upper left of the frame, it does not center
       automatically.
    */
-   if (m_bMovedWindow || HasExtraControlCreator()) // we need these flags.
+   if (m_bMovedWindow || HasExtraControlCreator() || HasUserPaneCreator()) // we need these flags.
    {
       ChangeExceptionPolicy();
-      msw_flags |= OFN_EXPLORER|OFN_ENABLEHOOK;
+      msw_flags |= OFN_EXPLORER | OFN_ENABLEHOOK | OFN_ENABLETEMPLATEHANDLE;
 #ifndef __WXWINCE__
       msw_flags |= OFN_ENABLESIZING;
 #endif
